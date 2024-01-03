@@ -8,7 +8,7 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 //Upload Changes
 app.use(
   cors({
-    origin: ["https://an0nsecrect.vercel.app/"],
+    origin: ["https://anonsecret-chat.vercel.app/"],
     methods: ["GET", "POST"],
     credentials: true,
   })
