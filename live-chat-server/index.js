@@ -7,7 +7,9 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 app.use(
   cors({
-    origin: "*",
+    origin: ["https://live-chat-app-sable.vercel.app/"],
+    methods: ["GET", "POST"],
+    credentials: true,
   })
 );
 dotenv.config();
