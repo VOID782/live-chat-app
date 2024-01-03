@@ -11,7 +11,7 @@ import axios from "axios";
 import { myContext } from "./MainContainer";
 import { io } from "socket.io-client";
 
-const ENDPOINT = "http://localhost:8080";
+const ENDPOINT = "https://an0nsecrect.vercel.app";
 
 var socket, chat;
 
@@ -39,7 +39,7 @@ function ChatArea() {
     };
     axios
       .post(
-        "http://localhost:8080/message/",
+        "https://an0nsecrect.vercel.app/message/",
         {
           content: messageContent,
           chatId: chat_id,
@@ -81,7 +81,7 @@ function ChatArea() {
       },
     };
     axios
-      .get("http://localhost:8080/message/" + chat_id, config)
+      .get("https://an0nsecrect.vercel.app/message/" + chat_id, config)
       .then(({ data }) => {
         setAllMessages(data);
         setloaded(true);

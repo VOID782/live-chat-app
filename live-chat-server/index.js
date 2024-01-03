@@ -5,9 +5,10 @@ const app = express();
 const cors = require("cors");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
+//Upload Changes
 app.use(
   cors({
-    origin: ["https://live-chat-app-sable.vercel.app/"],
+    origin: ["https://an0nsecrect.vercel.app/"],
     methods: ["GET", "POST"],
     credentials: true,
   })
