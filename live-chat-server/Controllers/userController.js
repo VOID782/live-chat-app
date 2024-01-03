@@ -9,7 +9,14 @@ const loginController = expressAsyncHandler(async (req, res) => {
   const user = await UserModel.findOne({ name });
 
   console.log("fetched user Data", user);
-  console.log(await user.matchPassword(password));
+
+  if (!user) {
+    res.status(401);
+    throw new Error("User not found");
+  }
+
+  console.log(await user.matchPassword(password)); // Assuming matchPassword is implemented properly
+
   if (user && (await user.matchPassword(password))) {
     const response = {
       _id: user._id,
